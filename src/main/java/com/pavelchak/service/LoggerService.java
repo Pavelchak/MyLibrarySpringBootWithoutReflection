@@ -27,5 +27,4 @@ public class LoggerService {
         if (logger == null) throw new NoSuchLogException();
         return logger;
     }
-
 }

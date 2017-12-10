@@ -55,7 +55,6 @@ public class PersonService {
         if (city_id > 0) {
 //            City city = cityRepository.findOne(city_id);//1.5.9
             City city = cityRepository.findById(city_id).get();//2.0.0.M7
-
             if (city == null) throw new NoSuchCityException();
             person.setCity(city);
         }
@@ -66,7 +65,6 @@ public class PersonService {
     public void updatePerson(Person uPerson, Long person_id, Long city_id) throws NoSuchCityException, NoSuchPersonException {
 //        City city = cityRepository.findOne(city_id);//1.5.9
         City city = cityRepository.findById(city_id).get();//2.0.0.M7
-
         if (city_id > 0) {
             if (city == null) throw new NoSuchCityException();
         }
@@ -121,6 +119,4 @@ public class PersonService {
         person.getBooks().remove(book);
         personRepository.save(person);
     }
-
-
 }

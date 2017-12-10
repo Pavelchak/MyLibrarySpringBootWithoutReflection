@@ -67,5 +67,4 @@ public class BookService {
         if (book.getPersons().size() != 0) throw new ExistsPersonForBookException();
         bookRepository.delete(book);
     }
-
 }

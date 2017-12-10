@@ -54,5 +54,4 @@ public class CityService {
         if (city.getPersons().size() != 0) throw new ExistsPersonsForCityException();
         cityRepository.delete(city);
     }
-
 }

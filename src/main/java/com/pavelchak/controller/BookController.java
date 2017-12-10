@@ -2,10 +2,7 @@ package com.pavelchak.controller;
 
 
 import com.pavelchak.DTO.BookDTO;
-import com.pavelchak.DTO.LoggerDTO;
-
 import com.pavelchak.domain.Book;
-import com.pavelchak.domain.Logger;
 import com.pavelchak.exceptions.ExistsPersonForBookException;
 import com.pavelchak.exceptions.NoSuchBookException;
 import com.pavelchak.exceptions.NoSuchPersonException;
@@ -50,7 +47,6 @@ public class BookController {
 
         BookDTO bookDTO = new BookDTO(book, link);
 
-//        BookDTO bookDTO = DTOBuilder.buildDtoForEntity(book, BookDTO.class, link);
         return new ResponseEntity<>(bookDTO, HttpStatus.OK);
     }
 

@@ -1,10 +1,7 @@
 package com.pavelchak.controller;
 
-
 import com.pavelchak.DTO.CityDTO;
-import com.pavelchak.DTO.PersonDTO;
 import com.pavelchak.domain.City;
-import com.pavelchak.domain.Person;
 import com.pavelchak.exceptions.ExistsPersonsForCityException;
 import com.pavelchak.exceptions.NoSuchBookException;
 import com.pavelchak.exceptions.NoSuchCityException;
@@ -39,7 +36,6 @@ public class CityController {
             citiesDTO.add(dto);
         }
 
-//        List<CityDTO> cities = DTOBuilder.buildDtoListForCollection(cityList, CityDTO.class, link);
         return new ResponseEntity<>(citiesDTO, HttpStatus.OK);
     }
 
@@ -50,7 +46,6 @@ public class CityController {
 
         CityDTO cityDTO = new CityDTO(city, link);
 
-//        CityDTO cityDTO = DTOBuilder.buildDtoForEntity(city,CityDTO.class, link);
         return new ResponseEntity<>(cityDTO, HttpStatus.OK);
     }
 
@@ -61,7 +56,6 @@ public class CityController {
 
         CityDTO cityDTO = new CityDTO(newCity, link);
 
-//        CityDTO cityDTO = DTOBuilder.buildDtoForEntity(newCity,CityDTO.class, link);
         return new ResponseEntity<>(cityDTO, HttpStatus.CREATED);
     }
 
@@ -73,7 +67,6 @@ public class CityController {
 
         CityDTO cityDTO = new CityDTO(city, link);
 
-//        CityDTO cityDTO = DTOBuilder.buildDtoForEntity(city,CityDTO.class, link);
         return new ResponseEntity<>(cityDTO, HttpStatus.OK);
     }
 
@@ -82,5 +75,4 @@ public class CityController {
         cityService.deleteCity(city_id);
         return new ResponseEntity(HttpStatus.OK);
     }
-
 }

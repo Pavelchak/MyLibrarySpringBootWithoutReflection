@@ -1,11 +1,6 @@
 package com.pavelchak.controller;
 
-import com.pavelchak.DTO.BookDTO;
-
-import com.pavelchak.DTO.LoggerDTO;
 import com.pavelchak.DTO.PersonDTO;
-
-import com.pavelchak.domain.Book;
 import com.pavelchak.domain.Person;
 import com.pavelchak.exceptions.*;
 import com.pavelchak.service.PersonService;
@@ -40,7 +35,6 @@ public class PersonController {
             personsDTO.add(dto);
         }
 
-//        List<PersonDTO> personDTO = DTOBuilder.buildDtoListForCollection(personList, PersonDTO.class, link);
         return new ResponseEntity<>(personsDTO, HttpStatus.OK);
     }
 
@@ -51,8 +45,7 @@ public class PersonController {
 
         PersonDTO personDTO = new PersonDTO(person, link);
 
-//        PersonDTO personDTO = DTOBuilder.buildDtoForEntity(person, PersonDTO.class, link);
-        return new ResponseEntity<>(personDTO, HttpStatus.OK);
+       return new ResponseEntity<>(personDTO, HttpStatus.OK);
     }
 
     @GetMapping(value = "/api/person")
@@ -67,7 +60,6 @@ public class PersonController {
             personsDTO.add(dto);
         }
 
-//        List<PersonDTO> cities = DTOBuilder.buildDtoListForCollection(personList, PersonDTO.class, link);
         return new ResponseEntity<>(personsDTO, HttpStatus.OK);
     }
 
@@ -76,7 +68,6 @@ public class PersonController {
         Set<Person> personList = personService.getPersonsByBookId(book_id);
         Link link = linkTo(methodOn(PersonController.class).getAllPersons()).withSelfRel();
 
-
         List<PersonDTO> personsDTO = new ArrayList<>();
         for (Person entity : personList) {
             Link selfLink = new Link(link.getHref() + "/" + entity.getId()).withSelfRel();
@@ -84,7 +75,6 @@ public class PersonController {
             personsDTO.add(dto);
         }
 
-//        List<PersonDTO> personDTO = DTOBuilder.buildDtoListForCollection(personList, PersonDTO.class, link);
         return new ResponseEntity<>(personsDTO, HttpStatus.OK);
     }
 
@@ -96,7 +86,6 @@ public class PersonController {
 
         PersonDTO personDTO = new PersonDTO(newPerson, link);
 
-//        PersonDTO personDTO = DTOBuilder.buildDtoForEntity(newPerson,PersonDTO.class, link);
         return new ResponseEntity<>(personDTO, HttpStatus.CREATED);
     }
 
@@ -110,7 +99,6 @@ public class PersonController {
 
         PersonDTO personDTO = new PersonDTO(person, link);
 
-//        PersonDTO personDTO = DTOBuilder.buildDtoForEntity(person,PersonDTO.class, link);
         return new ResponseEntity<>(personDTO, HttpStatus.OK);
     }
 
@@ -129,7 +117,6 @@ public class PersonController {
 
         PersonDTO personDTO = new PersonDTO(person, link);
 
-//        PersonDTO personDTO = DTOBuilder.buildDtoForEntity(person,PersonDTO.class, link);
         return new ResponseEntity<>(personDTO, HttpStatus.OK);
     }
 
@@ -142,7 +129,6 @@ public class PersonController {
 
         PersonDTO personDTO = new PersonDTO(person, link);
 
-//        PersonDTO personDTO = DTOBuilder.buildDtoForEntity(person,PersonDTO.class, link);
         return new ResponseEntity<>(personDTO, HttpStatus.OK);
     }
 

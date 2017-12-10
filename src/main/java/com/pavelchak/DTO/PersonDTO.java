@@ -15,7 +15,6 @@ public class PersonDTO extends ResourceSupport {
     public PersonDTO(Person person, Link selfLink) throws NoSuchPersonException, NoSuchBookException {
         this.person=person;
         add(selfLink);
-
         add(linkTo(methodOn(BookController.class).getBooksByPersonID(person.getId())).withRel("books"));
     }
 
@@ -47,6 +46,4 @@ public class PersonDTO extends ResourceSupport {
     public String getApartment() {
         return person.getApartment();
     }
-
-
 }
